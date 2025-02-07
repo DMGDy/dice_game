@@ -33,8 +33,7 @@ roll_dice(unsigned int dice_seed[2],user_t* user) {
   int die_num = get_choice();
   srand(dice_seed[die_num]+time(NULL));
 
-  int roll = rand()%6;
-  roll += (roll == 0)? 1: 0;
+  int roll = rand()%6 + 1;
 
   printf("The value from Die %d is: %d\n", die_num, roll);
   user->score += roll;
